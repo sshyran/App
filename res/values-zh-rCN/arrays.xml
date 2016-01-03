@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="function_item_name">
+		<item>解包内核</item>
+		<item>打包内核</item>
+		<item>刷写内核</item>
+		<item>备份内核</item>
+		<item>固件工具</item>
+		<item>镜像转换</item>
+		<item>高级重启</item>
+</string-array>
+
+	<string-array name="drawer_item_name">
+		<item>用户反馈</item>
+		<item>检查更新</item>
+		<item>工具设置</item>
+		<item>关于工具</item>
+	</string-array>
+	<string-array name="reboot_item_name">
+		<item>恢复模式</item>
+		<item>普通重启</item>
+		<item>引导模式</item>
+		<item>软重启</item>
+	</string-array>
+	<string-array name="firmware_item_name">
+		<item>华为固件 *.APP</item>
+		<item>酷派固件 *.CPB</item>
+	</string-array>
+</resources>

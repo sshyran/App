@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:gravity="left">
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:gravity="center"
+		android:id="@+id/activitymaindrawerLinearLayout1">
+
+		<ImageButton
+			android:layout_height="100dp"
+			android:layout_width="match_parent"
+			android:src="@drawable/ic_launcher"
+			android:scaleType="fitCenter"
+			style="?android:attr/buttonBarButtonStyle"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:orientation="horizontal">
+
+		<ScrollView
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:scrollbars="none"
+			android:id="@+id/activitymaindrawerScrollView1"
+			android:layout_marginLeft="20dp">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="@string/about"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:layout_width="wrap_content"
+				android:id="@+id/activity_main_drawer_header_TextView"/>
+
+		</ScrollView>
+
+	</LinearLayout>
+
+</LinearLayout>
+

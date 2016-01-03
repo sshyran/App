@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="30dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/activity_about_header" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/activity_about_bt_join_us"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/join_qq_group" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/activity_about_bt_show_source"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/show_source_page" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/activity_about_bt_show_change_log"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/show_change_log" />
+	<android.support.v7.widget.AppCompatButton
+        android:id="@+id/activity_about_bt_show_help"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/show_help" />
+	
+</LinearLayout>

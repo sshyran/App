@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:layout_margin="10dp">
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:orientation="horizontal">
+
+		<android.support.v7.widget.AppCompatTextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/update_current_version"/>
+
+		<android.support.v7.widget.AppCompatTextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/activity_update_tv_current_version"/>
+
+	</LinearLayout>
+
+	<View
+		android:layout_height="1dp"
+		android:background="?android:attr/dividerVertical"
+		android:layout_width="match_parent"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:orientation="horizontal">
+
+		<android.support.v7.widget.AppCompatTextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/update_newest_version"/>
+
+		<android.support.v7.widget.AppCompatTextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/activity_update_tv_newest_version"/>
+
+	</LinearLayout>
+
+	<View
+		android:layout_height="1dp"
+		android:background="?android:attr/dividerVertical"
+		android:layout_width="match_parent"/>
+
+	<android.support.v7.widget.AppCompatTextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/update_content"/>
+
+	<View
+		android:layout_height="1dp"
+		android:background="?android:attr/dividerVertical"
+		android:layout_width="match_parent"/>
+
+	<ScrollView
+		android:layout_height="200dp"
+		android:layout_width="match_parent">
+
+		<android.support.v7.widget.AppCompatTextView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:id="@+id/activity_update_tv_upgrade_content"/>
+
+	</ScrollView>
+
+	<View
+		android:layout_height="1dp"
+		android:background="?android:attr/dividerVertical"
+		android:layout_width="match_parent"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:layout_marginTop="10dp">
+
+		<android.support.v7.widget.AppCompatButton
+			android:layout_height="wrap_content"
+			android:text="@string/update_check"
+			android:layout_width="wrap_content"
+			android:layout_weight="1.0"
+			android:layout_margin="10dp"
+			android:id="@+id/activity_update_bt_check_update"/>
+
+		<android.support.v7.widget.AppCompatButton
+			android:layout_height="wrap_content"
+			android:text="@string/update_now"
+			android:layout_width="wrap_content"
+			android:layout_weight="1.0"
+			android:layout_margin="10dp"
+			android:id="@+id/activity_update_bt_do_update"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+

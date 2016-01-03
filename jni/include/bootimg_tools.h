@@ -1,0 +1,1 @@
+#define _BOOTTOOLS_VERSION_ 1

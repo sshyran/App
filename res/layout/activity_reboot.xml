@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:orientation="vertical"
+	android:layout_marginLeft="10dp">
+
+	<android.support.v7.widget.AppCompatTextView
+		android:layout_height="wrap_content"
+		android:text="@string/reboot_type"
+		android:layout_width="match_parent"
+		android:layout_marginTop="10dp"/>
+
+	<android.support.v7.widget.AppCompatSpinner
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:id="@+id/activity_reboot_sp_type"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:layout_marginTop="10dp">
+
+		<android.support.v7.widget.AppCompatButton
+			android:layout_height="wrap_content"
+			android:text="@string/reboot_do"
+			android:layout_width="wrap_content"
+			android:id="@+id/activity_reboot_bt_do_reboot"
+			android:layout_marginTop="10dp"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+

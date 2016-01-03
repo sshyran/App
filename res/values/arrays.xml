@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="function_item_name">
+		<item>Unpack Kernel</item>
+		<item>Repack Kernel</item>
+		<item>Flash Kernel</item>
+		<item>Backup Kernel</item>
+		<item>Firmware Tool</item>
+		<item>Image Convert</item>
+		<item>Advanced Reboot</item>
+	</string-array>
+
+	<string-array name="mode_item_name">
+		<item>Boot</item>
+		<item>Recovery</item>
+	</string-array>
+	
+	<string-array name="drawer_item_name">
+		<item>Feedback</item>
+		<item>Update</item>
+		<item>Setting</item>
+		<item>About</item>
+	</string-array>
+
+	<string-array name="reboot_item_name">
+		<item>Recovery Mode</item>
+		<item>Normal Reboot</item>
+		<item>Bootloader Mode</item>
+		<item>Soft Reboot</item>
+	</string-array>
+	<string-array name="firmware_item_name">
+		<item>Huawei Firmware *.APP</item>
+		<item>Coolpad Firmware *.CPB</item>
+	</string-array>
+</resources>

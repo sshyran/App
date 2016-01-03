@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="crixec.app.imagefactory"
+    android:installLocation="internalOnly"
+    android:versionCode="2"
+    android:versionName="1.1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="crixec.app.imagefactory.core.ImageFactory"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="crixec.app.imagefactory.activity.SplashActivity"
+            android:launchMode="singleTop" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="crixec.app.imagefactory.activity.MainActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="crixec.app.imagefactory.activity.SettingActivity"
+            android:launchMode="singleTask" />
+        <activity android:name="crixec.app.imagefactory.activity.ChooserActivity" />
+        <activity
+            android:name="crixec.app.imagefactory.activity.UnpackbootimgActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="crixec.app.imagefactory.activity.RepackbootimgActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="crixec.app.imagefactory.activity.AboutActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="crixec.app.imagefactory.activity.FeedbackActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="crixec.app.imagefactory.activity.UpdateActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="crixec.app.imagefactory.activity.RebootActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="crixec.app.imagefactory.activity.FlashbootimgActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="crixec.app.imagefactory.activity.BackupbootimgActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="crixec.app.imagefactory.activity.FirmwareActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="crixec.app.imagefactory.activity.ImageConvertActivity"
+            android:launchMode="singleTask" />
+    </application>
+
+</manifest>

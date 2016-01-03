@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:orientation="vertical"
+	android:layout_marginLeft="10dp">
+
+	<android.support.v7.widget.AppCompatTextView
+		android:layout_height="wrap_content"
+		android:text="@string/firmware_name"
+		android:layout_width="match_parent"
+		android:layout_marginTop="10dp"/>
+
+	<android.support.v7.widget.AppCompatEditText
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:singleLine="false"
+		android:hint="no file selected"
+		android:id="@+id/activity_firmware_et_firmware_file"/>
+
+	<android.support.v7.widget.AppCompatTextView
+		android:layout_height="wrap_content"
+		android:text="@string/firmware_output_path"
+		android:layout_width="match_parent"
+		android:layout_marginTop="10dp"/>
+
+	<android.support.v7.widget.AppCompatEditText
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:singleLine="false"
+		android:hint="no file selected"
+		android:id="@+id/activity_firmware_et_outputpath"/>
+	<android.support.v7.widget.AppCompatTextView
+		android:layout_height="wrap_content"
+		android:text="@string/firmware_type"
+		android:layout_width="match_parent"/>
+
+	<android.support.v7.widget.AppCompatSpinner
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:id="@+id/activity_firmware_sp_type"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:layout_marginTop="10dp">
+
+		<android.support.v7.widget.AppCompatButton
+			android:layout_height="wrap_content"
+			android:text="@string/firmware_select"
+			android:layout_width="wrap_content"
+			android:layout_weight="1.0"
+			android:layout_margin="10dp"
+			android:id="@+id/activity_firmawre_bt_select"/>
+
+		<android.support.v7.widget.AppCompatButton
+			android:layout_height="wrap_content"
+			android:text="@string/firmware_do"
+			android:layout_width="wrap_content"
+			android:layout_weight="1.0"
+			android:layout_margin="10dp"
+			android:id="@+id/activity_firmware_bt_do_unpack"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:orientation="vertical"
+	android:layout_marginLeft="10dp">
+
+	<android.support.v7.widget.AppCompatTextView
+		android:layout_height="wrap_content"
+		android:text="@string/unpack_name"
+		android:layout_width="match_parent"
+		android:layout_marginTop="10dp"/>
+
+	<android.support.v7.widget.AppCompatEditText
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:singleLine="false"
+		android:id="@+id/activity_unpackbootimg_et_path"/>
+
+	<android.support.v7.widget.AppCompatTextView
+		android:layout_height="wrap_content"
+		android:text="@string/unpack_output_path"
+		android:layout_width="match_parent"
+		android:layout_marginTop="20dp"/>
+
+	<android.support.v7.widget.AppCompatEditText
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:singleLine="false"
+		android:id="@+id/activity_unpackbootimg_et_outputpath"/>
+
+	<android.support.v7.widget.AppCompatCheckBox
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_gravity="left|center"
+		android:text="@string/unpack_mtk"
+		android:id="@+id/activity_unpackbootimg_cb_is_mtk"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:layout_marginTop="10dp">
+
+		<android.support.v7.widget.AppCompatButton
+			android:layout_height="wrap_content"
+			android:text="@string/unpack_select"
+			android:layout_width="wrap_content"
+			android:layout_weight="1.0"
+			android:layout_margin="10dp"
+			android:id="@+id/activity_unpackbootimg_bt_select"/>
+
+		<android.support.v7.widget.AppCompatButton
+			android:layout_height="wrap_content"
+			android:text="@string/unpack_do"
+			android:layout_width="wrap_content"
+			android:layout_weight="1.0"
+			android:layout_margin="10dp"
+			android:id="@+id/activity_unpackbootimg_bt_do_unpack"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+

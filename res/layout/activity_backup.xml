@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:orientation="vertical"
+	android:layout_marginLeft="10dp">
+
+	<android.support.v7.widget.AppCompatTextView
+		android:layout_height="wrap_content"
+		android:text="@string/backup_name"
+		android:layout_width="match_parent"
+		android:layout_marginTop="10dp"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal">
+
+		<android.support.v7.widget.AppCompatEditText
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:singleLine="false"
+			android:id="@+id/activity_backup_et_outputfile"
+			android:layout_weight="1.0"/>
+
+		<android.support.v7.widget.AppCompatTextView
+			android:layout_height="wrap_content"
+			android:text=".img"
+			android:layout_width="wrap_content"/>
+
+	</LinearLayout>
+	
+	<android.support.v7.widget.AppCompatTextView
+		android:layout_height="wrap_content"
+		android:text="@string/backup_type"
+		android:layout_width="match_parent"/>
+
+	<android.support.v7.widget.AppCompatSpinner
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:id="@+id/activity_backup_sp_type"/>
+	<android.support.v7.widget.AppCompatTextView
+		android:layout_height="wrap_content"
+		android:text="@string/backup_parttition_path"
+		android:layout_width="match_parent"
+		android:layout_marginTop="10dp"/>
+
+	<android.support.v7.widget.AppCompatEditText
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:singleLine="false"
+		android:id="@+id/activity_backup_et_devpath"/>
+	
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:layout_marginTop="10dp">
+
+		<android.support.v7.widget.AppCompatButton
+			android:layout_height="wrap_content"
+			android:text="@string/backup_do"
+			android:layout_width="wrap_content"
+			android:id="@+id/activity_backup_bt_do_backup"
+			android:layout_marginTop="10dp"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+
