@@ -8,6 +8,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import crixec.app.imagefactory.core.ImageFactory;
+import crixec.app.imagefactory.core.Debug;
 
 public class DeviceUtils {
 	@SuppressLint("SimpleDateFormat")
@@ -28,7 +29,12 @@ public class DeviceUtils {
 	}
 
 	public static String getSystemARCH() {
-		return ShellUtils.execSH("toolbox getprop ro.product.cpu.abi");
+		String arch = ShellUtils.execSH("toolbox getprop ro.product.cpu.abi");
+		Debug.i("System ARCH=" + arch);
+		if(arch.indexOf("x86") != -1){
+			return "x86";
+		}
+		return "arm";
 	}
 
 	public static boolean isNetworkConnected() {

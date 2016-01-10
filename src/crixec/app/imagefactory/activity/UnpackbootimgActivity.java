@@ -20,6 +20,7 @@ import android.app.ProgressDialog;
 import crixec.app.imagefactory.core.ExceptionHandler;
 import android.text.TextWatcher;
 import android.text.Editable;
+import crixec.app.imagefactory.ui.FileChooseDialog;
 
 public class UnpackbootimgActivity extends AppCompatActivity implements View.OnClickListener
 {
@@ -148,7 +149,17 @@ public class UnpackbootimgActivity extends AppCompatActivity implements View.OnC
 		switch (p1.getId())
 		{
 			case R.id.activity_unpackbootimg_bt_select:{
-					startActivityForResult(new Intent(UnpackbootimgActivity.this, ChooserActivity.class), ImageFactory.FILECHOOSE_CODE_REQUEST);
+					FileChooseDialog dialog = new FileChooseDialog(UnpackbootimgActivity.this);
+					dialog.choose("SIMG2IMG", new FileChooseDialog.Callback(){
+
+							@Override
+							public void onSelected(File file)
+							{
+								// TODO: Implement this method
+								etBootimg.setText(file.getAbsolutePath());
+							}
+						});
+
 					break;
 				}
 			case R.id.activity_unpackbootimg_bt_do_unpack:{

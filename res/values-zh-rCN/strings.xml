@@ -53,7 +53,7 @@
 	<string name="setting_base">基础设置</string>
 	<string name="setting_workspace_path">工作路径</string>
 	<string name="setting_workspace_path_summary">程序功能文件输出位置</string>
-	<string name="setting_workspace_path_new_workspace">进行解包</string>
+	<string name="setting_workspace_path_new_workspace">输入新的工作路径</string>
 	<string name="update_current_version">当前版本：</string>
 	<string name="update_newest_version">最新版本：</string>
 	<string name="update_content">更新内容：</string>

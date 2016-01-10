@@ -144,6 +144,10 @@ public class NativeUtils
 		}
 		return false;
 	}
+	public static String sdat2img(String transfer, String newdat, String to){
+		return ShellUtils.execSH(String.format("%s '%s' '%s' '%s'", new File(ImageFactory.getDataDirectory(), "sdat2img").getAbsolutePath(), transfer, newdat, to));
+	}
+	
 	public static boolean unGzip(String from)
 	{
 		String[] args = new String[3];
@@ -200,21 +204,6 @@ public class NativeUtils
 	{
 		return ShellUtils.execSH(new File(ImageFactory.getDataDirectory(), "/uncpio").getAbsolutePath() + " " + cpiofile + " " + outdir + " " + outlist);
 	}
-	public static boolean canBeWorkspace(File file) {
-		file.mkdirs();
-		int code = 255;
-		if((code = checkWorksapce(file.getPath())) == 0){
-			Debug.i("check result code=" + code);
-			return true;
-		}
-		Debug.i("check result code=" + code);
-		return false;
-	}
-	
-	public static boolean cat(String from, String to){
-		String[] args = new String[]{"cat", from, to};
-		return cat(args) == 0 ? true : false;
-	}
 	
 	public static native int unpackbootimg(String[] args);
 
@@ -230,7 +219,4 @@ public class NativeUtils
 
 	public static native int minigzip(String[] args);
 	
-	public static native int checkWorksapce(String workspace);
-	
-	public static native int cat(String[] args);
 }

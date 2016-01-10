@@ -25,6 +25,8 @@ import crixec.app.imagefactory.utils.NativeUtils;
 import crixec.app.imagefactory.utils.PartitionUtils;
 import crixec.app.imagefactory.utils.RebootUtils;
 import crixec.app.imagefactory.utils.ShellUtils;
+import crixec.app.imagefactory.utils.FileUtils;
+import crixec.app.imagefactory.ui.FileChooseDialog;
 
 public class FlashbootimgActivity extends AppCompatActivity
 {
@@ -102,7 +104,16 @@ public class FlashbootimgActivity extends AppCompatActivity
 				public void onClick(View p1)
 				{
 					// TODO: Implement this method
-					startActivityForResult(new Intent(FlashbootimgActivity.this, ChooserActivity.class), ImageFactory.FILECHOOSE_CODE_REQUEST);
+					FileChooseDialog dialog = new FileChooseDialog(FlashbootimgActivity.this);
+					dialog.choose("BOOT", new FileChooseDialog.Callback(){
+
+											  @Override
+											  public void onSelected(File file)
+											  {
+												  // TODO: Implement this method
+												  etBootimg.setText(file.getAbsolutePath());
+											  }
+										 });
 				}
 			});
 		etTarget.addTextChangedListener(new TextWatcher(){
@@ -227,11 +238,9 @@ public class FlashbootimgActivity extends AppCompatActivity
 			super.run();
 			Looper.prepare();
 			flashHandler.sendEmptyMessage(2);
-			String shell = "toolbox dd if=" + etBootimg.getText().toString() + " of=" + etTarget.getText().toString();
-			ShellUtils.exec(shell);
-			if(!NativeUtils.cat(etBootimg.getText().toString(), etTarget.getText().toString())){
-				flashHandler.sendEmptyMessage(1);
-			}
+			File from = new File(etBootimg.getText().toString());
+			File to = new File(etTarget.getText().toString());
+			ShellUtils.restore(from, to);
 			flashHandler.sendEmptyMessage(0);
 		}
 

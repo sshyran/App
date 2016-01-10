@@ -21,6 +21,7 @@ import crixec.app.imagefactory.ui.Dialog;
 import crixec.app.imagefactory.ui.Toast;
 import crixec.app.imagefactory.utils.DeviceUtils;
 import crixec.app.imagefactory.utils.NativeUtils;
+import crixec.app.imagefactory.ui.FileChooseDialog;
 
 public class FirmwareActivity extends AppCompatActivity implements View.OnClickListener
 {
@@ -93,7 +94,15 @@ public class FirmwareActivity extends AppCompatActivity implements View.OnClickL
 		// TODO: Implement this method
 		switch(p1.getId()){
 			case R.id.activity_firmawre_bt_select:{
-				startActivityForResult(new Intent(FirmwareActivity.this, ChooserActivity.class), ImageFactory.FILECHOOSE_CODE_REQUEST);
+					new FileChooseDialog(FirmwareActivity.this).choose(getResources().getStringArray(R.array.firmware_item_name)[spinner.getSelectedItemPosition()], new FileChooseDialog.Callback(){
+
+							@Override
+							public void onSelected(File file)
+							{
+								// TODO: Implement this method
+								etFirmware.setText(file.getAbsolutePath());
+							}
+						});
 				break;
 			}
 			case R.id.activity_firmware_bt_do_unpack:{
@@ -102,25 +111,7 @@ public class FirmwareActivity extends AppCompatActivity implements View.OnClickL
 			}
 		}
 	}
-
-
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data)
-	{
-		// TODO: Implement this method
-		if (resultCode == RESULT_CANCELED) return;
-		switch (requestCode)
-		{
-			case ImageFactory.FILECHOOSE_CODE_REQUEST:{
-					etFirmware.setText(data.getStringExtra("SELECTED"));
-					break;
-				}
-			default:{
-					break;
-				}
-		}
-	}
-	@SuppressLint("HandlerLeak")
+@SuppressLint("HandlerLeak")
 	private Handler unpackHandler = new Handler(){
 
 		private ProgressDialog dialog;

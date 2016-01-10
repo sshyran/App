@@ -23,6 +23,7 @@
 	<string name="show_source_page">Show Open-source Page</string>
 	<string name="show_change_log">Show Change Log</string>
 	<string name="keyname_workpath">workpath</string>
+	<string name="keyname_clean_datas">clean_datas</string>
 	<string name="backup_name">Backup Filename</string>
 	<string name="backup_type">Backup Partition Type</string>
 	<string name="backup_parttition_path">Backup Partition Path</string>
@@ -51,6 +52,9 @@
 	<string name="setting_workspace_path">Workspace Path</string>
 	<string name="setting_workspace_path_summary">Application Datas Save Path</string>
 	<string name="setting_workspace_path_new_workspace">Edit Workspace Path</string>
+	<string name="setting_clean_datas">Clean Datas</string>
+	<string name="setting_clean_datas_summary">Remove all files of this APP</string>
+	<string name="setting_confirm_clean_datas">Really Clean Data(It will remove all files of this APP)?</string>
 	<string name="update_current_version">Current Version:</string>
 	<string name="update_newest_version">Newest Version:</string>
 	<string name="update_content">Upgrade Content:</string>
@@ -73,7 +77,7 @@
 	<string name="flashing">Fashing Kernel...</string>
 	<string name="flash_success">Flashed Success</string>
 	<string name="flash_kernel_from">Flashed Kernel From:</string>
-	<string name="converting">Conveting IMG...</string>
+	<string name="converting">Converting IMG...</string>
 	<string name="converted_success">Converted Success</string>
 	<string name="converted_failure">Converted Failure</string>
 	<string name="converted_to">Converted IMG to:</string>
@@ -96,6 +100,10 @@
 	<string name="downloading">Downloading</string>
 	<string name="show_help">Show Help</string>
 	<string name="help_content">This APP can normally run various functions, depending on whether the Workspace is correct, all the output directory is set to Workspace, the user can not specify the output, so that only to improve the stability of the program, you can go to the settings, the program will check most of the functions do not need ROOT permissions, the default does not request ROOT, security first. If there is a problem, please give me feedback.</string>
+	<string name="convert_type">Convert Type</string>
+	<string name="imageconvert_sdat2img_transfer_list">Select system.transfer.list</string>
+	<string name="imageconvert_sdat2img_new_dat">Select system.new.dat</string>
+	
 </resources>
 
 

@@ -1,58 +1,66 @@
 package crixec.app.imagefactory.server;
+import org.json.JSONObject;
+import org.json.JSONException;
 
 public class CheckUpdateServerBean
 {
-	public String BIND;
-	public Data data = new Data();
-	public Data getData(){
-		return data;
+	private String apkUrl;
+	private String changeLogUrl;
+	private int versionCode;
+	private String versionName;
+	public static String BIND;
+	private CheckUpdateServerBean(){
+		
 	}
-	public static class Data{
-		public int version_code;
-		public String version_name;
-		public String apk_url;
-		public String changelog_url;
-
-
-		public void setVersionCode(int version_code)
-		{
-			this.version_code = version_code;
-		}
-
-		public int getVersioCode()
-		{
-			return version_code;
-		}
-
-		public void setVersionName(String version_name)
-		{
-			this.version_name = version_name;
-		}
-
-		public String getVersionName()
-		{
-			return version_name;
-		}
-
-		public void setApkUrl(String apk_url)
-		{
-			this.apk_url = apk_url;
-		}
-
-		public String getApkUrl()
-		{
-			return apk_url;
-		}
-
-		public void setChangelogUrl(String changelog_url)
-		{
-			this.changelog_url = changelog_url;
-		}
-
-		public String getChangelogUrl()
-		{
-			return changelog_url;
-		}
+	public static CheckUpdateServerBean parseJson(String json) throws JSONException{
+		CheckUpdateServerBean instance = new CheckUpdateServerBean();
+		JSONObject obj = new JSONObject(json);
+		JSONObject data = obj.getJSONObject("data");
+		instance.setApkUrl(data.getString("apk_url"));
+		instance.setChangeLogUrl(data.getString("changelog_url"));
+		instance.setVersionCode(data.getInt("version_code"));
+		instance.setVersionName(data.getString("version_name"));
+		return instance;
 	}
+	public void setApkUrl(String apkUrl)
+	{
+		this.apkUrl = apkUrl;
+	}
+
+	public String getApkUrl()
+	{
+		return apkUrl;
+	}
+
+	public void setChangeLogUrl(String changeLogUrl)
+	{
+		this.changeLogUrl = changeLogUrl;
+	}
+
+	public String getChangeLogUrl()
+	{
+		return changeLogUrl;
+	}
+
+	public void setVersionCode(int versionCode)
+	{
+		this.versionCode = versionCode;
+	}
+
+	public int getVersionCode()
+	{
+		return versionCode;
+	}
+
+	public void setVersionName(String versionName)
+	{
+		this.versionName = versionName;
+	}
+
+	public String getVersionName()
+	{
+		return versionName;
+	}
+	
 }	
 

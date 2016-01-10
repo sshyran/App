@@ -46,7 +46,6 @@ JNIEXPORT jint JNICALL Java_crixec_app_imagefactory_utils_NativeUtils_unpackcpb
  */
 JNIEXPORT jint JNICALL Java_crixec_app_imagefactory_utils_NativeUtils_simg2img
   (JNIEnv *, jclass, jobjectArray);
-
 /*
  * Class:     crixec_app_imagefactory_utils_NativeUtils
  * Method:    copyright
@@ -61,22 +60,6 @@ JNIEXPORT jstring JNICALL Java_crixec_app_imagefactory_utils_NativeUtils_copyrig
  * Signature: ([Ljava/lang/String;)I
  */
 JNIEXPORT jint JNICALL Java_crixec_app_imagefactory_utils_NativeUtils_minigzip
-  (JNIEnv *, jclass, jobjectArray);
-
-/*
- * Class:     crixec_app_imagefactory_utils_NativeUtils
- * Method:    checkWorksapce
- * Signature: (Ljava/lang/String;)I
- */
-JNIEXPORT jint JNICALL Java_crixec_app_imagefactory_utils_NativeUtils_checkWorksapce
-  (JNIEnv *, jclass, jstring);
-
-/*
- * Class:     crixec_app_imagefactory_utils_NativeUtils
- * Method:    cat
- * Signature: ([Ljava/lang/String;)I
- */
-JNIEXPORT jint JNICALL Java_crixec_app_imagefactory_utils_NativeUtils_cat
   (JNIEnv *, jclass, jobjectArray);
 
 #ifdef __cplusplus

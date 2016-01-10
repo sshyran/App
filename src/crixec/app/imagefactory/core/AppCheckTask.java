@@ -19,24 +19,24 @@ public class AppCheckTask extends Thread
 		// TODO: Implement this method
 		super.run();
 		Debug.i("AppCheckTask starting");
-		Debug.i("建立工作目录:" + ImageFactory.getStorageDirectory().getAbsolutePath());
 		ImageFactory.getStorageDirectory().mkdirs();
 		ImageFactory.getDataDirectory().mkdirs();
 		File mkcpio = new File(ImageFactory.getDataDirectory(), "/mkcpio");
-		Debug.i("mkcpio => " + mkcpio.getAbsolutePath());
 		File uncpio = new File(ImageFactory.getDataDirectory(), "/uncpio");
-		Debug.i("uncpio => " + uncpio.getAbsolutePath());
+		File sdat2img = new File(ImageFactory.getDataDirectory(), "/sdat2img");
 		try
 		{
 			if(!mkcpio.exists() && !mkcpio.canExecute()){
-				Debug.i("Copy file : " + DeviceUtils.getSystemARCH() + "/mkcpio");
 				FileUtils.writeFile(mContext.getAssets().open(DeviceUtils.getSystemARCH() + "/mkcpio"), mkcpio);
 				mkcpio.setExecutable(true, false);
 			}
 			if(!uncpio.exists() && !uncpio.canExecute()){
-				Debug.i("Copy file : " + DeviceUtils.getSystemARCH() + "/uncpio");
 				FileUtils.writeFile(mContext.getAssets().open(DeviceUtils.getSystemARCH() + "/uncpio"), uncpio);
 				uncpio.setExecutable(true, false);
+			}
+			if(!sdat2img.exists() && !sdat2img.canExecute()){
+				FileUtils.writeFile(mContext.getAssets().open(DeviceUtils.getSystemARCH() + "/sdat2img"), sdat2img);
+				sdat2img.setExecutable(true, false);
 			}
 		}
 		catch (Exception e)

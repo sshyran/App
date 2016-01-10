@@ -6,8 +6,6 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 
-import com.google.gson.Gson;
-
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -29,6 +27,7 @@ import crixec.app.imagefactory.server.CheckUpdateServerBean;
 import crixec.app.imagefactory.ui.Toast;
 import crixec.app.imagefactory.utils.DeviceUtils;
 import crixec.app.imagefactory.utils.HttpUtils;
+import java.io.RandomAccessFile;
 
 public class UpdateActivity extends AppCompatActivity implements View.OnClickListener {
 	private AppCompatTextView tvCurrentVer;
@@ -61,10 +60,10 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
 			} else {
 				dialog.dismiss();
 				if (msg.what == 0) {
-					if (bean.getData().getVersioCode() > ImageFactory.getPackageVersionCode()) {
+					if (bean.getVersionCode() > ImageFactory.getPackageVersionCode()) {
 						Toast.makeShortText(getString(R.string.has_new_version));
 						btDo.setEnabled(true);
-						tvNewVer.setText(bean.getData().getVersionName() + "  " + bean.getData().getVersioCode());
+						tvNewVer.setText(bean.getVersionName() + "(" + bean.getVersionCode() + ")");
 						tvNews.setText(bean.BIND);
 					} else {
 						Toast.makeShortText(getString(R.string.current_is_newest));
@@ -85,7 +84,7 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
 		getSupportActionBar().setHomeButtonEnabled(true);
 		setContentView(R.layout.activity_update);
 		tvCurrentVer = (AppCompatTextView) findViewById(R.id.activity_update_tv_current_version);
-		tvCurrentVer.setText(ImageFactory.getPackageVersionName() + " " + ImageFactory.getPackageVersionCode());
+		tvCurrentVer.setText(ImageFactory.getPackageVersionName() + "(" + ImageFactory.getPackageVersionCode() + ")");
 		btDo = (AppCompatButton) findViewById(R.id.activity_update_bt_do_update);
 		btDo.setEnabled(false);
 		btDo.setOnClickListener(this);
@@ -112,7 +111,7 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
 		} else if (p1.getId() == R.id.activity_update_bt_do_update) {
 			Toast.makeShortText(getString(R.string.start_upgrade));
 			DownloadApk da = new DownloadApk();
-			da.execute(new String[] { bean.getData().getApkUrl() });
+			da.execute(new String[] { bean.getApkUrl() });
 		}
 	}
 
@@ -129,9 +128,8 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
 			checkHandler.sendEmptyMessage(2);
 			try {
 				String json = HttpUtils.doGet(ImageFactory.SERVER_URL + "?method=2");
-				Gson gson = new Gson();
-				bean = gson.fromJson(json, CheckUpdateServerBean.class);
-				bean.BIND = HttpUtils.doGet(bean.getData().getChangelogUrl());
+				bean = CheckUpdateServerBean.parseJson(json);
+				bean.BIND = HttpUtils.doGet(bean.getChangeLogUrl());
 			} catch (Exception e) {
 				ExceptionHandler.handle(e);
 				checkHandler.sendEmptyMessage(3);
@@ -149,7 +147,7 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
 		URL url;
 		URLConnection coon;
 		InputStream is;
-		FileOutputStream fos;
+		RandomAccessFile fos;
 
 		@Override
 		protected void onPostExecute(String result) {
@@ -195,7 +193,6 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
 			if (values.length > 0) {
 				dialog.setMax(countSize);
 			}
-			dialog.setSecondaryProgress(divide(dlSize, countSize));
 			dialog.setProgress(dlSize);
 			dialog.setMessage(getString(R.string.downloading));
 		}
@@ -210,15 +207,17 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
 				is = coon.getInputStream();
 				coon.connect();
 				localFile = new File(ImageFactory.getStorageDirectory(),
-						"Update_" + DeviceUtils.getSystemTime() + ".apk");
-				fos = new FileOutputStream(localFile);
-				byte[] buf = new byte[1024 * 1000];
+						"Update_" + bean.getVersionName() + "_" + bean.getVersionCode() + ".apk");
+				fos = new RandomAccessFile(localFile, "rw");
+				byte[] buf = new byte[1024 * 4096];
 				int code = -1;
-				countSize = is.available();
+				countSize = coon.getContentLength();
+				if(is.available() == fos.length()){
+					return "下载完成";
+				}
 				publishProgress(new Integer[] { countSize });
 				while ((code = is.read(buf)) != -1) {
 					fos.write(buf, 0, code);
-					fos.flush();
 					dlSize += code;
 					publishProgress(new Integer[0]);
 				}

@@ -32,4 +32,8 @@
 		<item>Huawei Firmware *.APP</item>
 		<item>Coolpad Firmware *.CPB</item>
 	</string-array>
+	<string-array name="imageconvert_item_name">
+		<item>Convert system.img</item>
+		<item>Convert system.new.dat</item>
+	</string-array>
 </resources>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:orientation="vertical"
+	android:layout_marginLeft="10dp">
+
+	<android.support.v7.widget.AppCompatTextView
+		android:layout_height="wrap_content"
+		android:text="@string/imageconvert_sdat2img_transfer_list"
+		android:layout_width="match_parent"
+		android:layout_marginTop="10dp"/>
+
+	<android.support.v7.widget.AppCompatEditText
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:singleLine="false"
+		android:id="@+id/fragment_imageconvert_sdat2img_et_transfer"/>
+
+	<android.support.v7.widget.AppCompatButton
+		android:layout_height="wrap_content"
+		android:text="@string/imageconvert_sdat2img_transfer_list"
+		android:layout_width="match_parent"
+		android:layout_margin="10dp"
+		android:id="@+id/fragment_imageconvert_sdat2img_bt_select_transfer"/>
+
+	<android.support.v7.widget.AppCompatTextView
+		android:layout_height="wrap_content"
+		android:text="@string/imageconvert_sdat2img_new_dat"
+		android:layout_width="match_parent"
+		android:layout_marginTop="10dp"/>
+
+	<android.support.v7.widget.AppCompatEditText
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:singleLine="false"
+		android:id="@+id/fragment_imageconvert_sdat2img_et_new_dat"/>
+
+	<android.support.v7.widget.AppCompatButton
+		android:layout_height="wrap_content"
+		android:text="@string/imageconvert_sdat2img_new_dat"
+		android:layout_width="match_parent"
+		android:layout_margin="10dp"
+		android:id="@+id/fragment_imageconvert_sdat2img_bt_select_new_dat"/>
+
+	<android.support.v7.widget.AppCompatTextView
+		android:layout_height="wrap_content"
+		android:text="@string/imageconvert_to"
+		android:layout_width="match_parent"
+		android:layout_marginTop="20dp"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal">
+
+		<android.support.v7.widget.AppCompatEditText
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:singleLine="false"
+			android:id="@+id/fragment_imageconvert_sdat2img_et_outputpath"
+			android:layout_weight="1.0"/>
+
+		<android.support.v7.widget.AppCompatTextView
+			android:layout_height="wrap_content"
+			android:text=".img"
+			android:layout_width="wrap_content"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:layout_marginTop="10dp">
+
+		<android.support.v7.widget.AppCompatButton
+			android:layout_height="wrap_content"
+			android:text="@string/imageconvert_do"
+			android:layout_width="wrap_content"
+			android:layout_weight="1.0"
+			android:layout_margin="10dp"
+			android:id="@+id/fragment_imageconvert_sdat2img_bt_do_convert"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+

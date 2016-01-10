@@ -1,100 +1,100 @@
 obj/local/x86/objs/bootimg/sparse_crc32.o: jni/sparse_crc32.c \
  jni/include/ext4_utils.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/sys/types.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/stdint.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/machine/wchar_limits.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/sys/cdefs.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/sys/cdefs_elf.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/android/api-level.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/linux/types.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/asm/types.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/asm-generic/types.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/asm-generic/int-ll64.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/asm/bitsperlong.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/asm-generic/bitsperlong.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/linux/posix_types.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/linux/stddef.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/linux/compiler.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/asm/posix_types.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/asm/posix_types_32.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/asm-generic/posix_types.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/sys/sysmacros.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/errno.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/linux/errno.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/asm/errno.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/asm-generic/errno.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/asm-generic/errno-base.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/stdio.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/stdlib.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/string.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/malloc.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/xlocale.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/alloca.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/strings.h \
- D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/memory.h
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/sys/types.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/stdint.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/machine/wchar_limits.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/sys/cdefs.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/sys/cdefs_elf.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/android/api-level.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/linux/types.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/asm/types.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/asm-generic/types.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/asm-generic/int-ll64.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/asm/bitsperlong.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/asm-generic/bitsperlong.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/linux/posix_types.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/linux/stddef.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/linux/compiler.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/asm/posix_types.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/asm/posix_types_32.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/asm-generic/posix_types.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/sys/sysmacros.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/errno.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/linux/errno.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/asm/errno.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/asm-generic/errno.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/asm-generic/errno-base.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/stdio.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/stdlib.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/string.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/malloc.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/xlocale.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/alloca.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/strings.h \
+ /data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/memory.h
 
 jni/include/ext4_utils.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/sys/types.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/sys/types.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/stdint.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/stdint.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/machine/wchar_limits.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/machine/wchar_limits.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/sys/cdefs.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/sys/cdefs.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/sys/cdefs_elf.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/sys/cdefs_elf.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/android/api-level.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/android/api-level.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/linux/types.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/linux/types.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/asm/types.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/asm/types.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/asm-generic/types.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/asm-generic/types.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/asm-generic/int-ll64.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/asm-generic/int-ll64.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/asm/bitsperlong.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/asm/bitsperlong.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/asm-generic/bitsperlong.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/asm-generic/bitsperlong.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/linux/posix_types.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/linux/posix_types.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/linux/stddef.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/linux/stddef.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/linux/compiler.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/linux/compiler.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/asm/posix_types.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/asm/posix_types.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/asm/posix_types_32.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/asm/posix_types_32.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/asm-generic/posix_types.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/asm-generic/posix_types.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/sys/sysmacros.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/sys/sysmacros.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/errno.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/errno.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/linux/errno.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/linux/errno.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/asm/errno.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/asm/errno.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/asm-generic/errno.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/asm-generic/errno.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/asm-generic/errno-base.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/asm-generic/errno-base.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/stdio.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/stdio.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/stdlib.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/stdlib.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/string.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/string.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/malloc.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/malloc.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/xlocale.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/xlocale.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/alloca.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/alloca.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/strings.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/strings.h:
 
-D:/Android/android-ndk-r10e/platforms/android-21/arch-x86/usr/include/memory.h:
+/data/data/com.aide.ui/files/ndksupport-20150805/android-ndk-aide/platforms/android-21/arch-x86/usr/include/memory.h:

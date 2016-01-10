@@ -1,5 +1,5 @@
 *.o
 *.bak
 *.d
-obj/
+obj/local/
 bin/

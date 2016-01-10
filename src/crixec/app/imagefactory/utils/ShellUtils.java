@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 
 import crixec.app.imagefactory.core.Debug;
 import crixec.app.imagefactory.core.ExceptionHandler;
+import crixec.app.imagefactory.core.ImageFactory;
 
 public class ShellUtils
 {
@@ -20,6 +21,7 @@ public class ShellUtils
 			dos.writeBytes(cmd + "\n");
 			dos.flush();
 			dos.writeBytes("exit\n");
+			dos.flush();
 			p.waitFor();
 			if (doResult)
 			{
@@ -58,6 +60,24 @@ public class ShellUtils
 		return exec("sh", cmd, doResult);
 	}
 	public static String chmod(int mode, File file){
-		return exec("chmod -R " + mode + " " + file.getAbsolutePath());
+		return exec("toolbox chmod -R " + mode + " " + file.getAbsolutePath());
+	}
+	public static String backup(File from, File to){
+		StringBuilder sb = new StringBuilder();
+		File tmp = ImageFactory.getTmpFile();
+		sb.append(exec(String.format("toolbox cat '%s' > '%s'", from.getAbsolutePath(), tmp.getAbsolutePath())));
+		sb.append(exec(String.format("toolbox chmod 0777 %s", tmp.getAbsolutePath())));
+		FileUtils.writeFile(tmp, to);
+		tmp.delete();
+		return sb.toString();
+	}
+	public static String restore(File from, File to){
+		StringBuilder sb = new StringBuilder();
+		File tmp = ImageFactory.getTmpFile();
+		FileUtils.writeFile(from, tmp);
+		sb.append(exec(String.format("toolbox cat '%s' > '%s'", tmp.getAbsolutePath(), to.getAbsolutePath())));
+		sb.append(exec(String.format("toolbox chmod 0777 %s", tmp.getAbsolutePath())));
+		tmp.delete();
+		return sb.toString();
 	}
 }

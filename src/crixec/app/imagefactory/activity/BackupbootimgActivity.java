@@ -24,6 +24,7 @@ import crixec.app.imagefactory.utils.DeviceUtils;
 import crixec.app.imagefactory.utils.NativeUtils;
 import crixec.app.imagefactory.utils.PartitionUtils;
 import crixec.app.imagefactory.utils.ShellUtils;
+import crixec.app.imagefactory.utils.FileUtils;
 
 public class BackupbootimgActivity extends AppCompatActivity {
 	private AppCompatEditText mDevPath;
@@ -146,9 +147,7 @@ public class BackupbootimgActivity extends AppCompatActivity {
 			backupHandler.sendEmptyMessage(2);
 			File out = new File(UnpackbootimgActivity.getOutPath(), outfile.getText().toString() + ".img");
 			File dev = new File(mDevPath.getText().toString());
-			if(!NativeUtils.cat(dev.getAbsolutePath(), out.getAbsolutePath())){
-				backupHandler.sendEmptyMessage(1);
-			}
+			ShellUtils.backup(dev, out);
 			backupHandler.sendEmptyMessage(0);
 		}
 

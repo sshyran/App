@@ -8,6 +8,8 @@
 			android:summary="@string/setting_workspace_path_summary"  
 			android:title="@string/setting_workspace_path" />
 		
-	</PreferenceCategory>  
+	</PreferenceCategory>
+	<Preference android:key="@string/keyname_clean_datas" android:title="@string/setting_clean_datas"
+		android:summary="@string/setting_clean_datas_summary"/>
 </PreferenceScreen>  
 	

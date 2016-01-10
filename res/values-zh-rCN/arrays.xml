@@ -8,7 +8,7 @@
 		<item>固件工具</item>
 		<item>镜像转换</item>
 		<item>高级重启</item>
-</string-array>
+	</string-array>
 
 	<string-array name="drawer_item_name">
 		<item>用户反馈</item>
@@ -25,5 +25,9 @@
 	<string-array name="firmware_item_name">
 		<item>华为固件 *.APP</item>
 		<item>酷派固件 *.CPB</item>
+	</string-array>
+	<string-array name="imageconvert_item_name">
+		<item>system.img 转换</item>
+		<item>system.new.dat 转换</item>
 	</string-array>
 </resources>

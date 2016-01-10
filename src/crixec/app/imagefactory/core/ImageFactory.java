@@ -11,6 +11,7 @@ import android.os.Environment;
 import crixec.app.imagefactory.R;
 import crixec.app.imagefactory.utils.NativeUtils;
 import crixec.app.imagefactory.utils.XmlDataUtils;
+import crixec.app.imagefactory.utils.DeviceUtils;
 
 public class ImageFactory extends Application {
 	public static final long SPLASH_DELAY_TIME = 1500;
@@ -75,33 +76,22 @@ public class ImageFactory extends Application {
 		return mPackageInfo.versionCode;
 	}
 
-	@SuppressLint("SdCardPath")
 	public static File getStorageDirectory() {
 		if ("".equals(XmlDataUtils.getString(APP.getString(R.string.keyname_workpath)))) {
-			File file = null;
-			File[] files = new File[] { Environment.getExternalStorageDirectory(), new File("/storage/sdcard1"),
-					new File("/storage/sdcard0"), new File("/storage/emulated/0"), new File("/storage/emulated/legacy"),
-					new File("/mnt/sdcard"), new File("/sdcard"), getDataDirectory() };
-			for (File f : files) {
-				file = new File(f, STORAGE_NAME);
-				Debug.i("测试工作目录 ->" + file.getAbsolutePath());
-				if (NativeUtils.canBeWorkspace(file)) {
-					break;
-				}
-			}
-			XmlDataUtils.putString(APP.getString(R.string.keyname_workpath), file.getAbsolutePath());
-		} else {
-			File file = new File(XmlDataUtils.getString(APP.getString(R.string.keyname_workpath)));
-			if (!NativeUtils.canBeWorkspace(file)) {
-				XmlDataUtils.remove(APP.getString(R.string.keyname_workpath));
-				return getStorageDirectory();
-			}
+			XmlDataUtils.putString(APP.getString(R.string.keyname_workpath), new File(Environment.getExternalStorageDirectory(), STORAGE_NAME).getAbsolutePath());
 		}
 		return new File(XmlDataUtils.getString(APP.getString(R.string.keyname_workpath)));
 	}
 
 	public static File getDataDirectory() {
 		return APP.getFilesDir();
+	}
+	public static File getTmpFile(){
+		File file = new File(getDataDirectory(), "tmp");
+		file.mkdirs();
+		file = new File(file, String.format("File_%s.tmp", DeviceUtils.getSystemTime()));
+		file.deleteOnExit();
+		return file;
 	}
 
 }

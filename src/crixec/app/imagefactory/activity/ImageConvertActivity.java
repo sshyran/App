@@ -19,15 +19,18 @@ import crixec.app.imagefactory.utils.DeviceUtils;
 import android.text.TextWatcher;
 import android.text.Editable;
 import java.io.File;
+import android.support.v7.widget.AppCompatSpinner;
+import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
+import android.widget.Adapter;
+import crixec.app.imagefactory.fragment.Simg2imgFragment;
+import crixec.app.imagefactory.fragment.Sdat2imgFragment;
 
-public class ImageConvertActivity extends AppCompatActivity implements View.OnClickListener
-{
+public class ImageConvertActivity extends AppCompatActivity{
 	
-	private AppCompatEditText etImage;
-	private AppCompatEditText etOut;
-	private AppCompatButton btSelect;
-	private AppCompatButton btDoConvert;
-	private String OUTPUT_PREFIX = "Convert_Out_";
+	private AppCompatSpinner spinner;
+	private Simg2imgFragment mSimg2img;
+	private Sdat2imgFragment mSdat2img;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -37,33 +40,28 @@ public class ImageConvertActivity extends AppCompatActivity implements View.OnCl
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setHomeButtonEnabled(true);
 		setContentView(R.layout.activity_imageconvert);
-		etImage = (AppCompatEditText) findViewById(R.id.activity_imageconvert_et_path);
-		etOut = (AppCompatEditText) findViewById(R.id.activity_imageconvert_et_outputpath);
-		btSelect = (AppCompatButton) findViewById(R.id.activity_imageconvert_bt_select);
-		btDoConvert = (AppCompatButton) findViewById(R.id.activity_imageconvert_bt_do_convert);
-		btDoConvert.setEnabled(false);
-		btDoConvert.setOnClickListener(this);
-		btSelect.setOnClickListener(this);
-		etOut.setText(OUTPUT_PREFIX + DeviceUtils.getSystemTime());
-		etImage.addTextChangedListener(new TextWatcher(){
+		mSimg2img = new Simg2imgFragment();
+		mSdat2img = new Sdat2imgFragment();
+		spinner = (AppCompatSpinner) findViewById(R.id.activity_imageconvert_sp_type);
+		spinner.setAdapter(getAdapter());
+		getFragmentManager().beginTransaction().add(R.id.activity_imageconvert_framelayout, mSdat2img).hide(mSdat2img).add(R.id.activity_imageconvert_framelayout, mSimg2img).commit();
+		spinner.setOnItemSelectedListener(new AppCompatSpinner.OnItemSelectedListener(){
 
 				@Override
-				public void beforeTextChanged(CharSequence p1, int p2, int p3, int p4)
+				public void onItemSelected(AdapterView<?> p1, View p2, int p3, long p4)
 				{
 					// TODO: Implement this method
+					if(p3 == 0){
+						getFragmentManager().beginTransaction().hide(mSdat2img).show(mSimg2img).commit();
+					}else{
+						getFragmentManager().beginTransaction().hide(mSimg2img).show(mSdat2img).commit();
+					}
 				}
 
 				@Override
-				public void onTextChanged(CharSequence p1, int p2, int p3, int p4)
+				public void onNothingSelected(AdapterView<?> p1)
 				{
 					// TODO: Implement this method
-				}
-
-				@Override
-				public void afterTextChanged(Editable p1)
-				{
-					// TODO: Implement this method
-					btDoConvert.setEnabled(new File(p1.toString()).exists());
 				}
 			});
 	}
@@ -77,97 +75,9 @@ public class ImageConvertActivity extends AppCompatActivity implements View.OnCl
 		return super.onOptionsItemSelected(item);
 	}
 
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data)
-	{
-		// TODO: Implement this method
-		if (resultCode == RESULT_CANCELED) return;
-		switch (requestCode)
-		{
-			case ImageFactory.FILECHOOSE_CODE_REQUEST:{
-					etImage.setText(data.getStringExtra("SELECTED"));
-					break;
-				}
-			default:{
-					break;
-				}
-		}
-	}
-	@Override
-	public void onClick(View p1)
-	{
-		// TODO: Implement this method
-		switch(p1.getId()){
-			case R.id.activity_imageconvert_bt_select:{
-					startActivityForResult(new Intent(ImageConvertActivity.this, ChooserActivity.class), ImageFactory.FILECHOOSE_CODE_REQUEST);
-					break;
-				}
-			case R.id.activity_imageconvert_bt_do_convert:{
-					new DoConvert().start();
-					break;
-				}
-		}
-	}
-
-
-	private Handler convertHandler = new Handler(){
-
-		private ProgressDialog dialog;
-
-		@Override
-		public void handleMessage(Message msg)
-		{
-			// TODO: Implement this method
-			super.handleMessage(msg);
-			if (msg.what == 2)
-			{
-				dialog = new ProgressDialog(ImageConvertActivity.this);
-				dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-				dialog.setCancelable(false);
-				dialog.setMessage(getString(R.string.converting));
-				dialog.show();
-			}
-			else
-			{
-				dialog.dismiss();
-				if (msg.what == 0)
-				{
-					Dialog.build(ImageConvertActivity.this)
-						.setTitle(R.string.converted_success)
-						.setMessage(getString(R.string.converted_to) + UnpackbootimgActivity.getOutPath().getAbsolutePath() + "/" + etOut.getText().toString() + ".img")
-						.setPositiveButton(android.R.string.ok, null)
-						.show();
-				}
-				else
-				{
-					Toast.makeLongText(getString(R.string.converted_failure));
-				}
-				etOut.setText(OUTPUT_PREFIX + DeviceUtils.getSystemTime());
-			}
-		}
-
-	};
-	public class DoConvert extends Thread
-	{
-
-		@Override
-		public void run()
-		{
-			// TODO: Implement this method
-			super.run();
-			convertHandler.sendEmptyMessage(2);
-			try{
-				if(!NativeUtils.simg2img(etImage.getText().toString(), UnpackbootimgActivity.getOutPath().getAbsolutePath() + "/" + etOut.getText().toString() + ".img")){
-					convertHandler.sendEmptyMessage(1);
-					return;
-				}
-			}catch(Exception e){
-				ExceptionHandler.handle(e);
-				convertHandler.sendEmptyMessage(1);
-			}
-			convertHandler.sendEmptyMessage(0);
-		}
-
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public ArrayAdapter getAdapter(){
+		return new ArrayAdapter(ImageConvertActivity.this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.imageconvert_item_name));
 	}
 }
 

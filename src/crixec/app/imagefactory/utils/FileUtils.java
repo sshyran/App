@@ -9,6 +9,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 import crixec.app.imagefactory.core.ExceptionHandler;
+import java.io.FileNotFoundException;
+import crixec.app.imagefactory.core.Debug;
 
 public class FileUtils {
 
@@ -57,5 +59,17 @@ public class FileUtils {
 			ExceptionHandler.handle(e);
 		}
 		return code;
+	}
+	public static int writeFile(File from, File to){
+		Debug.i(String.format("write file from=%s\tto=%s", from.getAbsolutePath(), to.getAbsolutePath()));
+		try
+		{
+			return writeFile(new FileInputStream(from), to);
+		}
+		catch (FileNotFoundException e)
+		{
+			ExceptionHandler.handle(e);
+		}
+		return -1;
 	}
 }
