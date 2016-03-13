@@ -1,6 +1,5 @@
-*.[oa]
-*.bak
-*.d
-/obj/local/
-/bin/
-
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+/build
