@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
@@ -122,6 +123,7 @@ public class FeedbackActivity extends AppCompatActivity {
 		public void run() {
 			// TODO: Implement this method
 			super.run();
+			Looper.prepare();
 			feedbackHandler.sendEmptyMessage(2);
 			try {
 				Debug.i("Network status : " + DeviceUtils.hasNetwork());

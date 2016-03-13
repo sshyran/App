@@ -1,5 +1,6 @@
 package crixec.app.imagefactory.fragment;
 import android.app.Fragment;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.os.Bundle;
@@ -188,6 +189,7 @@ public class Sdat2imgFragment extends Fragment implements AppCompatButton.OnClic
 		{
 			// TODO: Implement this method
 			super.run();
+			Looper.prepare();
 			convertHandler.sendEmptyMessage(2);
 			NativeUtils.sdat2img(etTransfer.getText().toString(), etNewDat.getText().toString(), new File(UnpackbootimgActivity.getOutPath(), etOut.getText().toString() + ".img").getAbsolutePath());
 			convertHandler.sendEmptyMessage(0);

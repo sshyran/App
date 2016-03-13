@@ -90,19 +90,18 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
 		{
 			HashMap<String, Object> map = new HashMap<String, Object>();
 			map.put("NAME", ITEM_NAME[i]);
-			map.put("ICON", R.drawable.ic_item_demo);
 			savedList.add(map);
 		}
 		return new SimpleAdapter(getApplicationContext(), savedList, R.layout.activity_main_card_list_item,
-								 new String[] { "NAME", "ICON" },
-								 new int[] { R.id.activity_main_card_list_item_TextView, R.id.activity_main_card_list_item_ImageView });
+								 new String[] { "NAME"},
+								 new int[] { R.id.activity_main_card_list_item_TextView});
 	}
 
 	public SimpleAdapter getDrawerItemAdapter()
 	{
 		ArrayList<HashMap<String, ?>> list = new ArrayList<HashMap<String, ?>>();
 		String[] items = getResources().getStringArray(R.array.drawer_item_name);
-		int[] icons = { R.drawable.ic_feedback, R.drawable.ic_update, R.drawable.ic_setting, R.drawable.ic_about };
+		int[] icons = { R.mipmap.ic_feedback, R.mipmap.ic_update, R.mipmap.ic_setting, R.mipmap.ic_about };
 		for (int i = 0; i < items.length; i++)
 		{
 			HashMap<String, Object> map = new HashMap<String, Object>();

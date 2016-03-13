@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
@@ -127,6 +128,7 @@ public class RepackbootimgActivity extends AppCompatActivity
 		{
 			// TODO: Implement this method
 			super.run();
+			Looper.prepare();
 			repackHandler.sendEmptyMessage(2);
 			File out = new File(UnpackbootimgActivity.getOutPath(), outfile.getText().toString());
 			boolean b = NativeUtils.repackbootimg(UnpackbootimgActivity.getOutPath().getAbsolutePath() + "/" + items[spinner.getSelectedItemPosition()], out.getAbsolutePath() + ".img");

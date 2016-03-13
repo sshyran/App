@@ -27,5 +27,6 @@ android {
 dependencies {
     compile 'com.android.support:support-v4:23.2.1'
     compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.android.support:cardview-v7:23.2.1'
     compile files('libs/umeng-analytics-v5.6.4.jar')
 }

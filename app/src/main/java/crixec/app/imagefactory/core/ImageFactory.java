@@ -44,7 +44,6 @@ public class ImageFactory extends Application {
 	public static void forceStop(long l) {
 		try {
 			Thread.sleep(l);
-			android.os.Process.killProcess(android.os.Process.myPid());
 			System.exit(1);
 		} catch (InterruptedException e) {
 			e.printStackTrace();

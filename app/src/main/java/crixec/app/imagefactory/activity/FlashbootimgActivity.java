@@ -105,7 +105,7 @@ public class FlashbootimgActivity extends AppCompatActivity
 				{
 					// TODO: Implement this method
 					FileChooseDialog dialog = new FileChooseDialog(FlashbootimgActivity.this);
-					dialog.choose("BOOT", new FileChooseDialog.Callback(){
+					dialog.choose("boot.img & recovery.img", new FileChooseDialog.Callback(){
 
 											  @Override
 											  public void onSelected(File file)

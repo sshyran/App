@@ -109,16 +109,16 @@ public class FileChooseDialog extends AppCompatDialog{
 		for (int i = 0; i < list.size();i++)
 		{
 			File file = list.get(i);
-			int image = R.drawable.ic_file;
+			int image = R.mipmap.ic_file;
 			if (file.isDirectory())
 			{
-				image = R.drawable.ic_directory;
+				image = R.mipmap.ic_directory;
 			}
 			HashMap<String, Object> map = new HashMap<String, Object>();
 			if (i == 0)
 			{
 				map.put("NAME", getString(R.string.parent_path));
-				map.put("IMAGE", R.drawable.ic_last_directory);
+				map.put("IMAGE", R.mipmap.ic_directory);
 			}
 			else
 			{

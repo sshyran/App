@@ -4,6 +4,7 @@ import crixec.app.imagefactory.R;
 import crixec.app.imagefactory.core.ImageFactory;
 import crixec.app.imagefactory.ui.Toast;
 import android.content.Intent;
+import android.os.Looper;
 import android.view.View;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -150,7 +151,7 @@ public class UnpackbootimgActivity extends AppCompatActivity implements View.OnC
 		{
 			case R.id.activity_unpackbootimg_bt_select:{
 					FileChooseDialog dialog = new FileChooseDialog(UnpackbootimgActivity.this);
-					dialog.choose("SIMG2IMG", new FileChooseDialog.Callback(){
+					dialog.choose("boot.img & recovery.img", new FileChooseDialog.Callback(){
 
 							@Override
 							public void onSelected(File file)
@@ -191,6 +192,7 @@ public class UnpackbootimgActivity extends AppCompatActivity implements View.OnC
 		{
 			// TODO: Implement this method
 			super.run();
+			Looper.prepare();
 			unpackHandler.sendEmptyMessage(2);
 			File out = new File(getOutPath(), etOutput.getText().toString());
 			boolean b = NativeUtils.unpackbootimg(etBootimg.getText().toString(), out.getAbsolutePath(), cbMtk.isChecked());

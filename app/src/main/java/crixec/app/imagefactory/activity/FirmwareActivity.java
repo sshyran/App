@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
@@ -157,6 +158,7 @@ public class FirmwareActivity extends AppCompatActivity implements View.OnClickL
 		{
 			// TODO: Implement this method
 			super.run();
+			Looper.prepare();
 			unpackHandler.sendEmptyMessage(2);
 			boolean b = false;
 			if(spinner.getSelectedItemPosition() == 0){

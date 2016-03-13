@@ -13,6 +13,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
@@ -121,6 +122,7 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
 		public void run() {
 			// TODO: Implement this method
 			super.run();
+			Looper.prepare();
 			if (!DeviceUtils.hasNetwork()) {
 				checkHandler.sendEmptyMessage(1);
 				return;

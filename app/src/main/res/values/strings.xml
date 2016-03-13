@@ -103,7 +103,8 @@
 	<string name="convert_type">Convert Type</string>
 	<string name="imageconvert_sdat2img_transfer_list">Select system.transfer.list</string>
 	<string name="imageconvert_sdat2img_new_dat">Select system.new.dat</string>
-	
+	<string name="no_file_selected">no file selected</string>
+
 </resources>
 
 

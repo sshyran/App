@@ -16,7 +16,7 @@
 		android:layout_height="wrap_content"
 		android:layout_width="match_parent"
 		android:singleLine="false"
-		android:hint="no file selected"
+		android:hint="@string/no_file_selected"
 		android:id="@+id/activity_firmware_et_firmware_file"/>
 
 	<android.support.v7.widget.AppCompatTextView

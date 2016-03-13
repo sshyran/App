@@ -37,6 +37,7 @@ public class SettingFragment extends PreferenceFragment
 								// TODO: Implement this method
 								XmlDataUtils.remove(getString(R.string.keyname_workpath));
 								ShellUtils.execSH(String.format("toolbox rm -r %s", ImageFactory.getDataDirectory()));
+								ShellUtils.execSH(String.format("toolbox rm -r %s/*", ImageFactory.getStorageDirectory().toString()));
 								ImageFactory.forceStop();
 							}
 						})

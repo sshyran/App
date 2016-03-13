@@ -1,5 +1,6 @@
 package crixec.app.imagefactory.fragment;
 import android.app.Fragment;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.os.Bundle;
@@ -79,7 +80,7 @@ public class Simg2imgFragment extends Fragment implements View.OnClickListener
 		{
 			case R.id.fragment_imageconvert_simg2img_bt_select:{
 					FileChooseDialog dialog = new FileChooseDialog(ctx);
-					dialog.choose("SIMG2IMG", new FileChooseDialog.Callback(){
+					dialog.choose("system.img & data.img", new FileChooseDialog.Callback(){
 
 							@Override
 							public void onSelected(File file)
@@ -142,6 +143,7 @@ public class Simg2imgFragment extends Fragment implements View.OnClickListener
 		{
 			// TODO: Implement this method
 			super.run();
+			Looper.prepare();
 			convertHandler.sendEmptyMessage(2);
 			try
 			{
